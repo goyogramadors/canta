@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Canta</title>
+  <meta name="description" content="Ejercicios de vocalización con afinación en vivo.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="/cancionero/app/pwa/icon.svg">
+  <link rel="apple-touch-icon" href="/cancionero/app/pwa/icon.svg">
+  <link rel="stylesheet" href="/cancionero/app/css/base.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <span class="wordmark">Canta</span>
+      <nav class="tabs" id="navPrimary" role="tablist" hidden></nav>
+      <div id="navSecondary" hidden></div>
+    </header>
+    <main id="view"></main>
+  </div>
+
+  <script>
+    // Sitio de un solo tool, en su propio repo (para que la URL pública no
+    // cuelgue de /cancionero/, ver goyogramadors/cancionero:app/ARQUITECTURA.md
+    // -> "Canta para alumnos"). Reusa el código y los paquetes del repo
+    // cancionero por ruta ABSOLUTA (mismo origen goyogramadors.github.io,
+    // sin CORS, sin duplicar nada) y muestra solo estos ejercicios.
+    window.SB_CANTA_MEDIA_BASE = '/cancionero/app/canta-media/';
+    window.SB_CANTA_WORKLET_URL = '/cancionero/app/tools/canta/canta-pitch-worklet.js';
+    window.SB_CANTA_ALLOW = ['vocalizo-nota-larga', 'vocalizo-sexta', 'vocalizo-tercera-menor'];
+    window.SB_CANTA_STUDENT = true;
+  </script>
+
+  <!-- Núcleo compartido, reusado tal cual desde goyogramadors/cancionero -->
+  <script src="/cancionero/app/core/music.js"></script>
+  <script src="/cancionero/app/core/registry.js"></script>
+  <script src="/cancionero/app/core/ui.js"></script>
+  <script src="/cancionero/app/core/store.js"></script>
+
+  <!-- Solo la herramienta Canta -->
+  <script src="/cancionero/app/tools/canta/canta-dsp.js"></script>
+  <script src="/cancionero/app/tools/canta/canta-pitch.js"></script>
+  <script src="/cancionero/app/tools/canta/canta-motor.js"></script>
+  <script src="/cancionero/app/tools/canta/canta-engine.js"></script>
+  <script src="/cancionero/app/tools/canta/canta.js"></script>
+
+  <!-- Arranque (mismo core/app.js: router por hash y registro de SW) -->
+  <script src="/cancionero/app/core/app.js"></script>
+</body>
+</html>
