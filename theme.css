@@ -1,0 +1,19 @@
+/* ============================================================
+   Ajustes visuales SOLO del sitio público de Canta (este repo).
+   Se carga después de app/css/base.css y sobrescribe puntualmente;
+   NO se toca base.css porque también sirve al cancionero personal.
+   ============================================================ */
+
+/* base.css ya le da a Canta más ancho que al resto del cancionero
+   (1400px, ver su comentario "Canta se beneficia de más ancho"), pero
+   acá Canta es la ÚNICA herramienta del sitio: se usa la pantalla
+   completa en vez de un límite fijo, con un margen lateral que crece
+   un poco en pantallas grandes para no pegar el contenido al borde. */
+body[data-tool="canta"] .app{
+  max-width:none;
+  padding-left:clamp(20px, 4vw, 96px);
+  padding-right:clamp(20px, 4vw, 96px);
+}
+
+/* El carril de notas y la tabla de canciones ya son width:100% de
+   .app (base.css), así que heredan el ancho nuevo solos. */
