@@ -17,3 +17,20 @@ body[data-tool="canta"] .app{
 
 /* El carril de notas y la tabla de canciones ya son width:100% de
    .app (base.css), así que heredan el ancho nuevo solos. */
+
+/* Logo del profesor (logo.jpg): fondo blanco propio en una placa con
+   borde, para que se vea bien también en tema oscuro (la foto no
+   tiene transparencia). */
+.brand-badge{
+  display:inline-flex; align-items:center;
+  background:#ffffff; padding:4px 12px; border-radius:4px;
+  border:1px solid var(--line);
+}
+.brand-logo{height:40px; width:auto; display:block}
+@media (max-width:480px){ .brand-logo{height:32px} }
+
+/* base.css define nav.tabs{display:flex} con más especificidad que el
+   [hidden] del navegador, así que el atributo hidden de index.html no
+   alcanza para ocultar la pestaña única "Canta" (no tiene sentido
+   mostrar una sola pestaña cuando es lo único que hay en el sitio). */
+#navPrimary, #navSecondary{ display:none }

@@ -9,6 +9,6 @@
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
-    { "src": "/cancionero/app/pwa/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "logo.jpg", "sizes": "983x907", "type": "image/jpeg", "purpose": "any" }
   ]
 }
