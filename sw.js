@@ -7,7 +7,7 @@
    el shell incluye rutas absolutas hacia goyogramadors/cancionero
    (mismo origen goyogramadors.github.io: sin CORS, sin duplicar nada).
    ============================================================ */
-const CACHE = 'canta-v7';
+const CACHE = 'canta-v8';
 const SHELL = [
   'index.html',
   'manifest.webmanifest',
